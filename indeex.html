@@ -1,0 +1,155 @@
+!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Register New Batch | The Fertile Ground</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#204e2b",
+                      "primary-container": "#386641",
+                      "on-primary": "#ffffff",
+                      "secondary": "#805437",
+                      "surface": "#f9faf6",
+                      "surface-container-low": "#f3f4f0",
+                      "surface-container-high": "#e7e9e5",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#1a1c1a",
+                      "on-surface-variant": "#414941",
+                      "outline-variant": "#c1c9be",
+              },
+              "borderRadius": {
+                      "lg": "0.5rem",
+                      "xl": "0.75rem"
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        /* Architecture: Filled style input with primary bottom bar on focus */
+        .agri-input {
+            background-color: #e7e9e5; /* surface-container-high */
+            border: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .agri-input:focus {
+            ring: 0;
+            outline: none;
+            border-bottom-color: #204e2b; /* primary */
+            background-color: #f3f4f0;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+
+    <header class="px-8 py-6 max-w-5xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">agriculture</span>
+            <h2 class="text-xl font-bold tracking-tight text-primary">The Fertile Ground</h2>
+        </div>
+        <a href="#" class="text-sm font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Back to Dashboard</a>
+    </header>
+
+    <main class="p-8 max-w-5xl mx-auto">
+        <div class="mb-12">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">Supply Chain Entry</span>
+            <h1 class="text-5xl font-extrabold text-primary tracking-tighter">Register Batch.</h1>
+            <p class="text-on-surface-variant mt-4 max-w-md">Initialize a new crop cycle with precision data to ensure full traceability and soil health monitoring.</p>
+        </div>
+
+        <form class="grid grid-cols-12 gap-12">
+            
+            <div class="col-span-12 lg:col-span-7 space-y-10">
+                <section class="bg-surface-container-low p-8 rounded-xl">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-6">Crop Essentials</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Crop Variety Name</label>
+                            <input type="text" placeholder="e.g. Organic Heirloom Corn" class="agri-input w-full p-4 rounded-t-lg text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Batch ID / SKU</label>
+                                <input type="text" placeholder="#405-WHT" class="agri-input w-full p-4 rounded-t-lg text-sm">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Planting Date</label>
+                                <input type="date" class="agri-input w-full p-4 rounded-t-lg text-sm">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-surface-container-low p-8 rounded-xl">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-6">Field Coordinates</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                         <div class="flex flex-col gap-2">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Sector / Field Name</label>
+                            <select class="agri-input w-full p-4 rounded-t-lg text-sm">
+                                <option>Sector A-12 (North Terrace)</option>
+                                <option>Sector B-04 (West Plateau)</option>
+                                <option>Sector C-01 (Riverside)</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Total Acreage</label>
+                            <input type="number" placeholder="0.00" class="agri-input w-full p-4 rounded-t-lg text-sm">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-span-12 lg:col-span-5 space-y-8">
+                <div class="bg-primary text-on-primary p-8 rounded-xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] opacity-80 mb-4">Initial Soil Reading</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-[10px] font-bold mb-2">
+                                    <span>TARGET NITROGEN</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="w-full h-1 bg-white/20 rounded-full"><div class="w-4/5 h-full bg-white rounded-full"></div></div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-[10px] font-bold uppercase tracking-widest opacity-80">Baseline PH</label>
+                                <input type="text" placeholder="6.5" class="bg-white/10 border-none text-white placeholder:text-white/40 p-3 rounded text-sm focus:ring-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute right-0 top-0 w-1/2 h-full opacity-20" style="background-image: linear-gradient(135deg, transparent, #bcefc0);"></div>
+                </div>
+
+                <div class="p-4 border border-outline-variant/15 rounded-lg">
+                    <p class="text-xs text-on-surface-variant leading-relaxed italic">
+                        "By registering this batch, you are initializing the digital passport for this harvest, enabling automated sustainability auditing."
+                    </p>
+                </div>
+
+                <div class="pt-4 space-y-4">
+                    <button type="submit" class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all shadow-lg shadow-primary/10">
+                        <span class="material-symbols-outlined text-xl">save</span>
+                        Initialize Batch
+                    </button>
+                    <button type="button" class="w-full py-4 bg-surface-container-high text-on-surface rounded-lg font-bold hover:bg-outline-variant/30 transition-all">
+                        Save as Draft
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
